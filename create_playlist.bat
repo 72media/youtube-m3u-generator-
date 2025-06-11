@@ -14,24 +14,21 @@ echo #EXTM3U >> "%OUTPUT%"
 for /f "delims=" %%A in ('yt-dlp -g https://www.youtube.com/watch?v=jrYuqZmrV-4') do (
     echo #EXTINF:-1,ท่าเรือ หาดบางรัก>> "%OUTPUT%"
     echo %%A>> "%OUTPUT%"
-    goto next1
 )
-:next1
 
 :: Jimmy Woo's
 for /f "delims=" %%A in ('yt-dlp -g https://www.youtube.com/watch?v=j4D0N8Pevwg') do (
     echo #EXTINF:-1,Jimmy Woo's>> "%OUTPUT%"
     echo %%A>> "%OUTPUT%"
-    goto next2
 )
-:next2
 
 :: Crystal Bay
 for /f "delims=" %%A in ('yt-dlp -g https://www.youtube.com/watch?v=Fw9hgttWzIg') do (
     echo #EXTINF:-1,Crystal Bay>> "%OUTPUT%"
     echo %%A>> "%OUTPUT%"
-    goto done
 )
-:done
 
-echo Playlist updated: %OUTPUT%
+:: แจ้งสถานะ
+echo.
+echo ✅ สร้าง playlist เสร็จแล้ว: "%OUTPUT%"
+pause
